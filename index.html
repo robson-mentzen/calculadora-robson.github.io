@@ -7,12 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Javascript</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     </head>
 
-    <body>
-        <h1 onclick="mensagem()">Trabalhando com Javascript...</h1>
+    <body style="font-family: Roboto;">
+        <h2>Calculadora:</h2>
         <br>
-        <h2 onclick="mensagem()">Cálculos:</h2>
 
         <input id="txtNumero1" type="number" value="">
         <input id="txtNumero2" type="number" value="">
@@ -23,44 +25,55 @@
         <br><br>
         <h3 id="iblResultado">Resultado:</h3>
         <input id="txtResultado" disabled type="number" value="">
+        <br><br><hr>
+
+        <h2>Tabuada:</h2>
+        <br>
+
+        <input id="txtTabuada" type="number" min="1" max="10" value="">
+        <input type="button" onclick="tabuada()" value="Revelar Tabuada">
+        <br><br><span id="lblTabuada"><b>Resultado:</b></span>
 
         <script>
-            function somar(){
+            function somar() {
                 var valorNumero1 = document.getElementById("txtNumero1").value;
                 var valorNumero2 = document.getElementById("txtNumero2").value;
                 var soma = parseInt(valorNumero1) + parseInt(valorNumero2);
-                //alert("Resultado da soma = " + soma);
                 document.getElementById("txtResultado").value = soma;
+                //alert("Resultado da soma = " + somar);
             }
-            function subtrair(){
+            function subtrair() {
                 var valorNumero1 = document.getElementById("txtNumero1").value;
                 var valorNumero2 = document.getElementById("txtNumero2").value;
                 var soma = parseInt(valorNumero1) - parseInt(valorNumero2);
-                //alert("Resultado da soma = " + soma);
                 document.getElementById("txtResultado").value = soma;
+                //alert("Resultado da soma = " + subtrair);
             }
-            function multiplicar(){
+            function multiplicar() {
                 var valorNumero1 = document.getElementById("txtNumero1").value;
                 var valorNumero2 = document.getElementById("txtNumero2").value;
                 var soma = parseInt(valorNumero1) * parseInt(valorNumero2);
-                //alert("Resultado da soma = " + soma);
                 document.getElementById("txtResultado").value = soma;
+                //alert("Resultado da soma = " + multiplicar);
             }
-            function dividir(){
+            function dividir() {
                 var valorNumero1 = document.getElementById("txtNumero1").value;
                 var valorNumero2 = document.getElementById("txtNumero2").value;
                 var soma = parseInt(valorNumero1) / parseInt(valorNumero2);
-                //alert("Resultado da soma = " + soma);
                 document.getElementById("txtResultado").value = soma;
+                //alert("Resultado da soma = " + dividir);
             }
-            //função para imprimir um alerta com a mensagem escrita
-            function mensagem(){
-                alert('Olá, mundo!');
-            }
-            //função para escrever um texto
-            function escreverTexto(){
-                var msg = "Mensagem na tela";
-                document.write(msg);
+            function tabuada() {
+                var numTabuada = document.getElementById("txtTabuada").value;
+                if (!isNaN(parseInt(numTabuada))) {
+                    var resTabuada = "";
+                    for (var i=0; i<=10; i++) {
+                        resTabuada += i + "x" + numTabuada + "=" + (numTabuada * i) + "<br>";
+                    }
+                    document.getElementById("lblTabuada").innerHTML = resTabuada;
+                } else {
+                    alert("Informe um número válido!");
+                }
             }
         </script>
 
