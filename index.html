@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript</title>
+    </head>
+
+    <body>
+        <h1 onclick="mensagem()">Trabalhando com Javascript...</h1>
+        <br>
+        <h2 onclick="mensagem()">Cálculos:</h2>
+
+        <input id="txtNumero1" type="number" value="">
+        <input id="txtNumero2" type="number" value="">
+        <input type="button" onclick="somar()" value="Somar">
+        <input type="button" onclick="subtrair()" value="Subtrair">
+        <input type="button" onclick="multiplicar()" value="Multiplicar">
+        <input type="button" onclick="dividir()" value="Dividir">
+        <br><br>
+        <h3 id="iblResultado">Resultado:</h3>
+        <input id="txtResultado" disabled type="number" value="">
+
+        <script>
+            function somar(){
+                var valorNumero1 = document.getElementById("txtNumero1").value;
+                var valorNumero2 = document.getElementById("txtNumero2").value;
+                var soma = parseInt(valorNumero1) + parseInt(valorNumero2);
+                //alert("Resultado da soma = " + soma);
+                document.getElementById("txtResultado").value = soma;
+            }
+            function subtrair(){
+                var valorNumero1 = document.getElementById("txtNumero1").value;
+                var valorNumero2 = document.getElementById("txtNumero2").value;
+                var soma = parseInt(valorNumero1) - parseInt(valorNumero2);
+                //alert("Resultado da soma = " + soma);
+                document.getElementById("txtResultado").value = soma;
+            }
+            function multiplicar(){
+                var valorNumero1 = document.getElementById("txtNumero1").value;
+                var valorNumero2 = document.getElementById("txtNumero2").value;
+                var soma = parseInt(valorNumero1) * parseInt(valorNumero2);
+                //alert("Resultado da soma = " + soma);
+                document.getElementById("txtResultado").value = soma;
+            }
+            function dividir(){
+                var valorNumero1 = document.getElementById("txtNumero1").value;
+                var valorNumero2 = document.getElementById("txtNumero2").value;
+                var soma = parseInt(valorNumero1) / parseInt(valorNumero2);
+                //alert("Resultado da soma = " + soma);
+                document.getElementById("txtResultado").value = soma;
+            }
+            //função para imprimir um alerta com a mensagem escrita
+            function mensagem(){
+                alert('Olá, mundo!');
+            }
+            //função para escrever um texto
+            function escreverTexto(){
+                var msg = "Mensagem na tela";
+                document.write(msg);
+            }
+        </script>
+
+    </body>
+
+</html>
